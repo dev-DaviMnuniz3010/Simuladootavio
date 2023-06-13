@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Simulado Otavio</title>
+  </head>
+  <body>
+
+    <h1>Usar comandos no f12: console.log(nomedafuncao(alguma coisa)) </h1>
+<h2> Nomes das funcoes: primo (calcularnumeroprimo), quadradoPerfeito(conferir c e um quadrado perfeito), calcularFatorial(calcular o numero fatorial),contarVogais ( Contar quantidade de vogais),primoFibonacci (testar c é fibonacci e primo)  </h2>
+    <script>
+      //1) numero primo
+      function primo(number) {
+        if (number < 2) {
+          return false;
+        }
+      
+        for (let i = 2; i <= Math.sqrt(number); i++) {
+          if (number % i === 0)
+           { return false; } 
+        } return true; }
+
+
+      //2) quadrado perfeito
+      function quadradoPerfeito(number) {
+        if (number < 0) {
+          return false;
+        }
+        const squareRoot = Math.sqrt(number);
+        return squareRoot === Math.floor(squareRoot);
+      }
+
+
+      //3) fatorial
+      function calcularFatorial(numero) {
+        if (numero < 0) {
+          return "O número deve ser não negativo.";
+        }
+        
+        let fatorial = 1;
+        
+        for (let i = 2; i <= numero; i++) {
+          fatorial *= i;
+        }     return fatorial; }
+
+
+      //4) Contar vogais
+      function contarVogais(string) {
+        const vogais = ['a', 'e', 'i', 'o', 'u'];
+        let count = 0;
+        const lowerCaseString = string.toLowerCase();
+      
+        for (let i = 0; i < lowerCaseString.length; i++) {
+          if (vogais.includes(lowerCaseString[i])) {
+            count++;
+          }
+        }
+      
+        return count;
+      }
+
+
+      //5) testar c é fibonacci e primo
+      function primo(number) {
+        if (number < 2) {
+          return false;
+        }
+      
+        for (let i = 2; i <= Math.sqrt(number); i++) {
+          if (number % i === 0)
+           { return false; } 
+        } return true; }
+      
+      function Fibonacci(number) {
+        let a = 0, b = 1;
+        while (b < number) {
+          let temp = b;
+          b = a + b;
+          a = temp;
+        }
+        return b === number;
+      }
+      
+      function primoFibonacci(number) {
+        return primo(number) && Fibonacci(number);
+      }
+    </script>
+  </body>
+</html>
